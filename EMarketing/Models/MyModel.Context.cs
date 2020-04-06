@@ -13,10 +13,10 @@ namespace EMarketing.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbemarketingEntities : DbContext
+    public partial class dbemarketingEntities1 : DbContext
     {
-        public dbemarketingEntities()
-            : base("name=dbemarketingEntities")
+        public dbemarketingEntities1()
+            : base("name=dbemarketingEntities1")
         {
         }
     

@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a66edc40f4d04db887a3825519ad8189" Name="Diagram1">
+      <Diagram DiagramId="b8739b474de544c4ba738e870134b732" Name="Diagram1">
         <EntityTypeShape EntityType="dbemarketingModel.tbl_admin" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbemarketingModel.tbl_category" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbemarketingModel.tbl_category" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="dbemarketingModel.tbl_product" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="dbemarketingModel.tbl_user" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="dbemarketingModel.FK__tbl_categ__cat_f__24927208" ManuallyRouted="false" />

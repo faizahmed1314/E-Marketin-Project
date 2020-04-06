@@ -21,6 +21,7 @@
           <Property Name="cat_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="cat_image" Type="nvarchar(max)" Nullable="false" />
           <Property Name="cat_fk_ad" Type="int" />
+          <Property Name="cat_status" Type="int" />
         </EntityType>
         <EntityType Name="tbl_product">
           <Key>
@@ -120,6 +121,7 @@
           <Property Name="cat_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="cat_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="cat_fk_ad" Type="Int32" />
+          <Property Name="cat_status" Type="Int32" />
           <NavigationProperty Name="tbl_admin" Relationship="Self.FK__tbl_categ__cat_f__24927208" FromRole="tbl_category" ToRole="tbl_admin" />
           <NavigationProperty Name="tbl_product" Relationship="Self.FK__tbl_produ__pro_f__2B3F6F97" FromRole="tbl_category" ToRole="tbl_product" />
         </EntityType>
@@ -184,7 +186,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbemarketingEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="dbemarketingEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
           <EntitySet Name="tbl_category" EntityType="Self.tbl_category" />
           <EntitySet Name="tbl_product" EntityType="Self.tbl_product" />
@@ -207,7 +209,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dbemarketingModelStoreContainer" CdmEntityContainer="dbemarketingEntities">
+        <EntityContainerMapping StorageEntityContainer="dbemarketingModelStoreContainer" CdmEntityContainer="dbemarketingEntities1">
           <EntitySetMapping Name="tbl_admin">
             <EntityTypeMapping TypeName="dbemarketingModel.tbl_admin">
               <MappingFragment StoreEntitySet="tbl_admin">
@@ -224,6 +226,7 @@
                 <ScalarProperty Name="cat_name" ColumnName="cat_name" />
                 <ScalarProperty Name="cat_image" ColumnName="cat_image" />
                 <ScalarProperty Name="cat_fk_ad" ColumnName="cat_fk_ad" />
+                <ScalarProperty Name="cat_status" ColumnName="cat_status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

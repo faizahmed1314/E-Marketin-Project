@@ -24,6 +24,7 @@ namespace EMarketing.Models
         public string cat_name { get; set; }
         public string cat_image { get; set; }
         public Nullable<int> cat_fk_ad { get; set; }
+        public Nullable<int> cat_status { get; set; }
     
         public virtual tbl_admin tbl_admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

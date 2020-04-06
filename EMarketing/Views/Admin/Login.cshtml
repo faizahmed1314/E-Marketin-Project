@@ -34,6 +34,9 @@
                         <span><i class="fab fa-twitter-square"></i></span>
                     </div>
                 </div>
+                @Html.ValidationSummary(true)
+                @Html.AntiForgeryToken()
+                
                 @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
                 {
                     <div class="card-body">
@@ -44,6 +47,7 @@
                             </div>
                             <input type="text" name="ad_username" class="form-control" placeholder="username" required>
                             
+
                         </div>
 
 
@@ -52,9 +56,9 @@
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <input type="password" name="ad_password" class="form-control" placeholder="password" required>
-
+                            
                         </div>
-                        
+
 
                         <div class="row align-items-center remember">
                             <input type="checkbox">Remember Me
