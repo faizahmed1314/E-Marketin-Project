@@ -63,7 +63,7 @@ namespace EMarketing.Controllers
                 db.tbl_category.Add(cat);
                 db.SaveChanges();
                 
-                return RedirectToAction("Create");
+                return RedirectToAction("ViewCategory");
             }
             return View();
         }
@@ -73,7 +73,7 @@ namespace EMarketing.Controllers
 
             int pagesize = 6, pageindex = 1;
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
-            var list = db.tbl_category.Where(x => x.cat_status == 1).ToList();
+            var list = db.tbl_category.Where(x => x.cat_status == 1).OrderByDescending(x=>x.cat_id).ToList();
             IPagedList<tbl_category> stu = list.ToPagedList(pageindex, pagesize);
 
 
