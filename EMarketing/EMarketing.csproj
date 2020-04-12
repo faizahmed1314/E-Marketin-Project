@@ -232,6 +232,9 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\User\CreateAd.cshtml" />
+    <Content Include="Views\User\Ads.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

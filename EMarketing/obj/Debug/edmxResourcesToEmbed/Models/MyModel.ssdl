@@ -28,6 +28,7 @@
     <Property Name="pro_description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="pro_fk_cat" Type="int" />
     <Property Name="pro_fk_user" Type="int" />
+    <Property Name="pro_price" Type="int" />
   </EntityType>
   <EntityType Name="tbl_user">
     <Key>

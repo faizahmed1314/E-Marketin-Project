@@ -80,7 +80,6 @@ E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\obj\Debug\EMarketing.cs
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\obj\Debug\EMarketing.csproj.CopyComplete
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\obj\Debug\EMarketing.dll
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\obj\Debug\EMarketing.pdb
-E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\obj\Debug\EMarketing.csprojAssemblyReference.cache
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.dll
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.Mvc.dll
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.xml

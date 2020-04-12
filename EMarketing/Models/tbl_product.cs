@@ -20,6 +20,7 @@ namespace EMarketing.Models
         public string pro_description { get; set; }
         public Nullable<int> pro_fk_cat { get; set; }
         public Nullable<int> pro_fk_user { get; set; }
+        public Nullable<int> pro_price { get; set; }
     
         public virtual tbl_category tbl_category { get; set; }
         public virtual tbl_user tbl_user { get; set; }

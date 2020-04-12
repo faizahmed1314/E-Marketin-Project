@@ -33,6 +33,7 @@
     <Property Name="pro_fk_user" Type="Int32" />
     <NavigationProperty Name="tbl_category" Relationship="Self.FK__tbl_produ__pro_f__2B3F6F97" FromRole="tbl_product" ToRole="tbl_category" />
     <NavigationProperty Name="tbl_user" Relationship="Self.FK__tbl_produ__pro_f__2C3393D0" FromRole="tbl_product" ToRole="tbl_user" />
+    <Property Name="pro_price" Type="Int32" />
   </EntityType>
   <EntityType Name="tbl_user">
     <Key>

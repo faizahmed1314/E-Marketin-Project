@@ -24,6 +24,7 @@
     <EntitySetMapping Name="tbl_product">
       <EntityTypeMapping TypeName="dbemarketingModel.tbl_product">
         <MappingFragment StoreEntitySet="tbl_product">
+          <ScalarProperty Name="pro_price" ColumnName="pro_price" />
           <ScalarProperty Name="pro_id" ColumnName="pro_id" />
           <ScalarProperty Name="pro_name" ColumnName="pro_name" />
           <ScalarProperty Name="pro_image" ColumnName="pro_image" />

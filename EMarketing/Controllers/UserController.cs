@@ -66,7 +66,7 @@ namespace EMarketing.Controllers
             {
                 Session["u_id"] = person.u_id.ToString();
                 Session["u_name"] = person.u_name.ToString();
-                return RedirectToAction("Create");
+                return RedirectToAction("CreateAd");
             }
             else
             {
@@ -74,6 +74,52 @@ namespace EMarketing.Controllers
             }
 
             return View();
+        }
+        //createad view porjonto hoise
+        public ActionResult CreateAd()
+        {
+            List<tbl_category> list = db.tbl_category.ToList();
+            ViewBag.categorylist = new SelectList(list, "cat_id", "cat_name");
+            return View();
+        }
+
+        [HttpPost]
+        
+        public ActionResult CreateAd(tbl_product tblProduct,HttpPostedFileBase imgFile)
+        {
+            string path = UploadImageFile(imgFile);
+            if (path.Equals("-1"))
+            {
+                ViewBag.ErrorMessage = "File could not be uploaded......";
+            }
+            else
+            {
+                tbl_product p = new tbl_product();
+                p.pro_name = tblProduct.pro_name;
+                p.pro_image = path;
+                p.pro_description = tblProduct.pro_description;
+                p.pro_price = tblProduct.pro_price;
+                p.pro_fk_cat = tblProduct.pro_fk_cat;
+                p.pro_fk_user = Convert.ToInt32(Session["u_id"].ToString());
+
+                db.tbl_product.Add(p);
+                db.SaveChanges();
+
+                Response.Redirect("Index");
+
+            }
+            return View();
+        }
+
+        public ActionResult Ads(int? id, int? page)
+        {
+
+            int pagesize = 6, pageindex = 1;
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = db.tbl_product.Where(x => x.pro_fk_cat == id).OrderByDescending(x => x.pro_id).ToList();
+            IPagedList<tbl_product> stu = list.ToPagedList(pageindex, pagesize);
+            return View(stu);
+            
         }
 
         [NonAction]
