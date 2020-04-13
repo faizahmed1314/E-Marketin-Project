@@ -66,7 +66,7 @@ namespace EMarketing.Controllers
             {
                 Session["u_id"] = person.u_id.ToString();
                 Session["u_name"] = person.u_name.ToString();
-                return RedirectToAction("CreateAd");
+                return RedirectToAction("Index");
             }
             else
             {
@@ -120,6 +120,55 @@ namespace EMarketing.Controllers
             IPagedList<tbl_product> stu = list.ToPagedList(pageindex, pagesize);
             return View(stu);
             
+        }
+        [HttpPost]
+        [ActionName("Ads")]
+        public ActionResult SearchAds(int? id, int? page,string search)
+        {
+
+            int pagesize = 6, pageindex = 1;
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = db.tbl_product.Where(x=>x.pro_name.Contains(search)).OrderByDescending(x => x.pro_id).ToList();
+            IPagedList<tbl_product> stu = list.ToPagedList(pageindex, pagesize);
+            return View(stu);
+
+        }
+
+        public ActionResult AdDetails(int? id)
+        {
+            AdViewModel model = new AdViewModel();
+            tbl_product p = db.tbl_product.Where(x => x.pro_id == id).SingleOrDefault();
+            model.pro_id = p.pro_id;
+            model.pro_name = p.pro_name;
+            model.pro_price = p.pro_price;
+            model.pro_image = p.pro_image;
+            model.pro_description = p.pro_description;
+
+            tbl_category cat = db.tbl_category.Where(x => x.cat_id == p.pro_fk_cat).SingleOrDefault();
+            model.cat_name = cat.cat_name;
+
+            tbl_user user = db.tbl_user.Where(x => x.u_id == p.pro_fk_user).SingleOrDefault();
+            model.u_name = user.u_name;
+            model.u_image = user.u_image;
+            model.u_contact = user.u_contact;
+            model.pro_fk_user = user.u_id;
+
+            return View(model);
+
+        }
+        public ActionResult Logout()
+        {
+            Session.RemoveAll();
+            Session.Abandon();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteAd(int? id)
+        {
+            tbl_product p = db.tbl_product.Where(x => x.pro_id == id).SingleOrDefault();
+            db.tbl_product.Remove(p);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [NonAction]

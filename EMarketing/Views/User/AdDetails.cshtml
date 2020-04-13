@@ -1,0 +1,49 @@
+﻿@model EMarketing.Models.AdViewModel
+@{
+    ViewBag.Title = "AdDetails";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="container-fluid container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <img src="https://media.giphy.com/media/14wEijFfUX059SL13X/giphy.gif" style="width:100%; height:150px;" class="img img-responsive" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <img src="https://media.giphy.com/media/g0nA46gxFb7Z6/giphy.gif" alt="ads" style="height:500px" class="img-responsive" />
+        </div>
+        <div class="col-md-8 col-lg-8">
+
+            <div>
+                <h1>@Model.pro_name <small>AD-ID: @Model.pro_id</small></h1>
+            </div>
+            <img src="@Url.Content(Model.pro_image)" style="height:250px; width:200px" />
+
+            <div>
+                <h1>Description:</h1>
+                <p>@Model.pro_description</p>
+            </div>
+            <div>
+                <table class="table-responsive">
+                    <tr><td>Price:</td><td>@Model.pro_price</td></tr>
+                    <tr><td>Category:</td><td>@Model.cat_name</td></tr>
+                    <tr><td>Posted By:</td><td>@Model.u_name <img src="@Url.Content(Model.u_image)" style="height:40px; width:40px" /></td></tr>
+                    <tr><td>Contact:</td><td>@Model.u_contact</td></tr>
+                    <tr>
+                        <td colspan="2">
+                            @if (Convert.ToInt32(Session["u_id"]) == Convert.ToInt32(Model.pro_fk_user))
+                            {
+                                @Html.ActionLink("Close this Ad", "DeleteAd", new {id=Model.pro_id, @class="btn btn-danger"})
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <img src="https://media.giphy.com/media/ckSxYxwoYrgq6e1jLr/giphy.gif" alt="ads" style="height:500px" class="img-responsive" />
+        </div>
+    </div>
+
+</div>

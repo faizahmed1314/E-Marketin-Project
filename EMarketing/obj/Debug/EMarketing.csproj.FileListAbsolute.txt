@@ -84,3 +84,4 @@ E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.dll
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.Mvc.dll
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.xml
 E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\bin\PagedList.Mvc.xml
+E:\Faiz\BITM\asp.netProjectYoutube\EMarketing\EMarketing\obj\Debug\EMarketing.csprojAssemblyReference.cache

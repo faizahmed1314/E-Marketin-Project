@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdViewModel.cs" />
     <Compile Include="Models\Extended\Admin.cs" />
     <Compile Include="Models\MyModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +176,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\download.jpg" />
+    <Content Include="Content\img\m.jpg" />
+    <Content Include="Content\img\olx.jpg" />
+    <Content Include="Content\img\vivo-s1-pro-Price.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\paginition.css" />
     <Content Include="Content\styles.css" />
@@ -235,10 +240,10 @@
     <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\User\CreateAd.cshtml" />
     <Content Include="Views\User\Ads.cshtml" />
+    <Content Include="Views\User\AdDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\img\" />
     <Folder Include="Content\upload\" />
   </ItemGroup>
   <ItemGroup>
